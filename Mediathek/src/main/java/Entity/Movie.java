@@ -13,7 +13,7 @@ public class Movie {
     List<ActorMovie> actorMovies;
     @ManyToOne
     List<MovieLocation>movieLocations;
-    @ManyToOne
+    @ManyToOne 
     List<MovieGenre>movieGenres;
     @OneToMany
     Studio studio;
