@@ -9,8 +9,10 @@ public class Studio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int studioId;
     String studioName;
-    @ManyToOne
+    @OneToMany
     List<Movie> movies;
+
+    public Studio(){}
 
     public Studio(String studioName, List<Movie> movies) {
         this.studioName = studioName;
