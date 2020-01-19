@@ -14,6 +14,7 @@ public class Customer {
 
     int credit;
 
+    public Customer(){}
     public Customer(int customerId, CustomerDetail customerDetail, int credit) {
         CustomerId = customerId;
         this.customerDetail = customerDetail;

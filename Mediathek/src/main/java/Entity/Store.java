@@ -9,13 +9,14 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int storeId;
     String street;
-    @ManyToOne
-    List<Employee> employees;
-    @ManyToOne
-    List<Bill> bills;
     @OneToMany
+    List<Employee> employees;
+    @OneToMany
+    List<Bill> bills;
+    @ManyToOne
     Location location;
 
+    public Store(){}
     public Store(String street, List<Employee> employees, List<Bill> bills, Location location) {
         this.street = street;
         this.employees = employees;

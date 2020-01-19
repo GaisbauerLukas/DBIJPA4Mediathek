@@ -16,6 +16,8 @@ public class Lend {
     int costPerDay;
     Date dateOfAusleihe;
 
+    public Lend(){}
+
     public Lend(int lendID, Customer customer, int costPerDay, Date dateOfAusleihe) {
         this.lendID = lendID;
         this.customer = customer;

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 
 @Entity
 public class MovieGenre {
+    public MovieGenre(){}
+
     @EmbeddedId
     private MovieGenreID movieGenreID;
 

@@ -5,6 +5,10 @@ import javax.persistence.Entity;
 
 @Entity
 public class ActorMovie {
+    public ActorMovie(){
+
+    }
+
     @EmbeddedId
     private ActorMovieID actorMovieID;
 
