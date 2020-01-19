@@ -1,9 +1,10 @@
 package Entity;
 
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 @Embeddable
-public class MovieGenreID {
+public class MovieGenreID implements Serializable {
     private int movieId;
     private int genreId;
 
