@@ -18,6 +18,8 @@ public class Movie {
     @ManyToOne
     Studio studio;
 
+    public Movie(){}
+
     public Movie(String name, List<ActorMovie> actorMovies, List<MovieLocation> movieLocations, List<MovieGenre> movieGenres, Studio studio) {
         this.name = name;
         this.actorMovies = actorMovies;
