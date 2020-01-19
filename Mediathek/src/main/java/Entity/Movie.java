@@ -18,6 +18,14 @@ public class Movie {
     @OneToMany
     Studio studio;
 
+    public Movie(String name, List<ActorMovie> actorMovies, List<MovieLocation> movieLocations, List<MovieGenre> movieGenres, Studio studio) {
+        this.name = name;
+        this.actorMovies = actorMovies;
+        this.movieLocations = movieLocations;
+        this.movieGenres = movieGenres;
+        this.studio = studio;
+    }
+
     public int getMovieId() {
         return movieId;
     }

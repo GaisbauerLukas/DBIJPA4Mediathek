@@ -12,6 +12,11 @@ public class Studio {
     @ManyToOne
     List<Movie> movies;
 
+    public Studio(String studioName, List<Movie> movies) {
+        this.studioName = studioName;
+        this.movies = movies;
+    }
+
     public int getStudioId() {
         return studioId;
     }

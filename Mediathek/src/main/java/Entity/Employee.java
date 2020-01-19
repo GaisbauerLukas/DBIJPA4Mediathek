@@ -11,6 +11,11 @@ public class Employee {
     @OneToMany
     Store store;
 
+    public Employee(String name, Store store) {
+        this.name = name;
+        this.store = store;
+    }
+
     public int getEmpId() {
         return empId;
     }

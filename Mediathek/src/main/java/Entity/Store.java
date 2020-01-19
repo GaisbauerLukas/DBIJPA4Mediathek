@@ -16,6 +16,13 @@ public class Store {
     @OneToMany
     Location location;
 
+    public Store(String street, List<Employee> employees, List<Bill> bills, Location location) {
+        this.street = street;
+        this.employees = employees;
+        this.bills = bills;
+        this.location = location;
+    }
+
     public int getStoreId() {
         return storeId;
     }

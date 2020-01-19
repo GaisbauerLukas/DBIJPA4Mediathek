@@ -12,6 +12,12 @@ public class Bill {
     @OneToMany
     Store store;
 
+    public Bill(String movie, int cost, Store store) {
+        this.movie = movie;
+        this.cost = cost;
+        this.store = store;
+    }
+
     public int getBillId() {
         return billId;
     }
