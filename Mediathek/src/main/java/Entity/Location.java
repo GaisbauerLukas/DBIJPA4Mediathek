@@ -13,6 +13,12 @@ public class Location {
     @ManyToOne
     List<Store> stores;
 
+    public Location(String country, String city, List<Store> stores) {
+        this.country = country;
+        this.city = city;
+        this.stores = stores;
+    }
+
     public List<Store> getStores() {
         return stores;
     }
