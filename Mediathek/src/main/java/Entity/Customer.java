@@ -14,6 +14,12 @@ public class Customer {
 
     int credit;
 
+    public Customer(int customerId, CustomerDetail customerDetail, int credit) {
+        CustomerId = customerId;
+        this.customerDetail = customerDetail;
+        this.credit = credit;
+    }
+
     public int getCustomerId() {
         return CustomerId;
     }

@@ -12,6 +12,11 @@ public class Actor {
     @ManyToOne
     List<ActorMovie> actorMovies;
 
+    public Actor(String name, List<ActorMovie> actorMovies) {
+        this.name = name;
+        this.actorMovies = actorMovies;
+    }
+
     public int getActorId() {
         return actorId;
     }
