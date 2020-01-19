@@ -16,6 +16,10 @@ public class CustomerDetail {
     String favouriteMovie;
     String religion;
 
+    public CustomerDetail(){
+
+    }
+
     public CustomerDetail(int customerId, String phoneNumber, String email, Date birthday, String favouriteMovie, String religion) {
         CustomerId = customerId;
         this.phoneNumber = phoneNumber;
