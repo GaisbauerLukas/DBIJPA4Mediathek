@@ -10,7 +10,7 @@ public class RecordLocation {
     int recLocId;
     String city;
     String country;
-    @ManyToOne
+    @OneToMany
     List<MovieLocation>movieLocations;
 
     public int getRecLocId() {

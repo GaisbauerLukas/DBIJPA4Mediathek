@@ -10,8 +10,6 @@ public class Bill {
     int billId;
     String movie;
     int cost;
-    @OneToMany
-    List<Store> stores;
 
     public Bill(){
     }
@@ -19,7 +17,6 @@ public class Bill {
     public Bill(String movie, int cost, List<Store> store) {
         this.movie = movie;
         this.cost = cost;
-        this.stores = store;
     }
 
     public int getBillId() {
@@ -44,13 +41,5 @@ public class Bill {
 
     public void setCost(int cost) {
         this.cost = cost;
-    }
-
-    public List<Store> getStore() {
-        return stores;
-    }
-
-    public void setStore(List<Store> store) {
-        this.stores = store;
     }
 }
