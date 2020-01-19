@@ -9,8 +9,11 @@ public class Actor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int actorId;
     String name;
-    @ManyToOne
+    @OneToMany
     List<ActorMovie> actorMovies;
+
+    public Actor(){
+    }
 
     public Actor(String name, List<ActorMovie> actorMovies) {
         this.name = name;
