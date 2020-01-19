@@ -1,6 +1,7 @@
 package Entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Bill {
@@ -10,12 +11,15 @@ public class Bill {
     String movie;
     int cost;
     @OneToMany
-    Store store;
+    List<Store> stores;
 
-    public Bill(String movie, int cost, Store store) {
+    public Bill(){
+    }
+
+    public Bill(String movie, int cost, List<Store> store) {
         this.movie = movie;
         this.cost = cost;
-        this.store = store;
+        this.stores = store;
     }
 
     public int getBillId() {
@@ -42,11 +46,11 @@ public class Bill {
         this.cost = cost;
     }
 
-    public Store getStore() {
-        return store;
+    public List<Store> getStore() {
+        return stores;
     }
 
-    public void setStore(Store store) {
-        this.store = store;
+    public void setStore(List<Store> store) {
+        this.stores = store;
     }
 }
