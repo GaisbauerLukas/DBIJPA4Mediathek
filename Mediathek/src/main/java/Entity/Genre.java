@@ -12,6 +12,11 @@ public class Genre {
     @ManyToOne
     List<MovieGenre>movieGenres;
 
+    public Genre(String genre, List<MovieGenre> movieGenres) {
+        this.genre = genre;
+        this.movieGenres = movieGenres;
+    }
+
     public int getGenreId() {
         return genreId;
     }
