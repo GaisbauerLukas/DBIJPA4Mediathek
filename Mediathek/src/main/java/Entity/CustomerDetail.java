@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class CustomerDetails {
+public class CustomerDetail {
     @Id
     int CustomerId;
 
@@ -16,7 +16,7 @@ public class CustomerDetails {
     String favouriteMovie;
     String religion;
 
-    public CustomerDetails(int customerId, String phoneNumber, String email, Date birthday, String favouriteMovie, String religion) {
+    public CustomerDetail(int customerId, String phoneNumber, String email, Date birthday, String favouriteMovie, String religion) {
         CustomerId = customerId;
         this.phoneNumber = phoneNumber;
         this.email = email;
