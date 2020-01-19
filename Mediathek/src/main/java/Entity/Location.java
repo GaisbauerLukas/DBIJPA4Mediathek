@@ -10,21 +10,12 @@ public class Location {
     int locationId;
     String country;
     String city;
-    @ManyToOne
-    List<Store> stores;
+
+    public Location(){}
 
     public Location(String country, String city, List<Store> stores) {
         this.country = country;
         this.city = city;
-        this.stores = stores;
-    }
-
-    public List<Store> getStores() {
-        return stores;
-    }
-
-    public void setStores(List<Store> stores) {
-        this.stores = stores;
     }
 
     public int getLocationId() {
