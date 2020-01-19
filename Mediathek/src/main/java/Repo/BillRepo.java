@@ -13,7 +13,7 @@ public class BillRepo {
     EntityManager em;
 
     public void updateBill(Bill bill) {
-        em.createQuery("update Bill set movie = :movie, cost = :cost, store = :store where bill.id = :id")
+        em.createQuery("update Bill set movie = :movie, cost = :cost, store = :store where bill.billId = :id")
                 .setParameter("movie", bill.getMovie())
                 .setParameter("cost", bill.getCost())
                 .setParameter("store", bill.getStore())
@@ -21,7 +21,7 @@ public class BillRepo {
     }
 
     public void deleteBill(long id) {
-        em.createQuery("delete from Bill where Bill.id = :billid")
+        em.createQuery("delete from Bill where Bill.billId = :billid")
                 .setParameter("billid", id);
     }
 }
