@@ -9,13 +9,13 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int movieId;
     String name;
-    @ManyToOne
-    List<ActorMovie> actorMovies;
-    @ManyToOne
-    List<MovieLocation>movieLocations;
-    @ManyToOne 
-    List<MovieGenre>movieGenres;
     @OneToMany
+    List<ActorMovie> actorMovies;
+    @OneToMany
+    List<MovieLocation>movieLocations;
+    @OneToMany
+    List<MovieGenre>movieGenres;
+    @ManyToOne
     Studio studio;
 
     public Movie(String name, List<ActorMovie> actorMovies, List<MovieLocation> movieLocations, List<MovieGenre> movieGenres, Studio studio) {
