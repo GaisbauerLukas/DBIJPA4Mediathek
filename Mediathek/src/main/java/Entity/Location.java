@@ -13,7 +13,8 @@ public class Location {
 
     public Location(){}
 
-    public Location(String country, String city, List<Store> stores) {
+    public Location(int locationId, String country, String city) {
+        this.locationId = locationId;
         this.country = country;
         this.city = city;
     }
