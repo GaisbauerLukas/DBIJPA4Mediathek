@@ -15,6 +15,12 @@ public class Actor {
     public Actor(){
     }
 
+    public Actor(int actorId, String name, List<ActorMovie> actorMovies) {
+        this.actorId = actorId;
+        this.name = name;
+        this.actorMovies = actorMovies;
+    }
+
     public Actor(String name, List<ActorMovie> actorMovies) {
         this.name = name;
         this.actorMovies = actorMovies;
