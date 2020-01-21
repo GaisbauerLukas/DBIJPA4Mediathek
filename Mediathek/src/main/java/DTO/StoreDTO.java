@@ -24,7 +24,7 @@ public class StoreDTO {
     public StoreDTO() {
     }
 
-    String path = "../resources/Bill.csv";
+    String path = "../resources/Store.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))
