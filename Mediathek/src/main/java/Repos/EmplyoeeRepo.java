@@ -21,4 +21,7 @@ public class EmplyoeeRepo {
         em.createQuery("delete from Employee where empId = :empid")
                 .setParameter("empid", id);
     }
+    public void createEmployee(Employee employee){
+        //implement
+    }
 }

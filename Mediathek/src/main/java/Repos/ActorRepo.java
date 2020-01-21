@@ -22,4 +22,7 @@ public class ActorRepo {
         em.createQuery("delete from Actor where Actor.actorId = :actorid")
                 .setParameter("actorid", id);
     }
+    public void createActor(Actor actor){
+        //implement
+    }
 }

@@ -21,4 +21,7 @@ public class CustomerRepo {
         em.createQuery("delete from Customer where Customer.customerId = :customerid")
                 .setParameter("customerid", id);
     }
+    public void createCustomer(Customer customer){
+        //implement
+    }
 }

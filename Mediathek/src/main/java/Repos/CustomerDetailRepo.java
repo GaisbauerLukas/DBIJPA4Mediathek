@@ -22,7 +22,10 @@ public class CustomerDetailRepo {
     }
 
     public void deleteCustomerDetail(long id) {
-        em.createQuery("delete from CustomerDetail where CustomerDetail.customerId = :cdid")
+        em.createQuery("delete from CustomerDetail where CustomerId = :cdid")
                 .setParameter("cdid", id);
+    }
+    public void createCustomerDetail(CustomerDetail customerDetail){
+        //implement
     }
 }

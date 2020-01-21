@@ -12,7 +12,7 @@ public class GenreRepo {
     EntityManager em;
 
     public void updateGenre(Genre genre) {
-        em.createQuery("update Genre set genre = :genre, movieGenres = :movieGenres where genre.genreId = :id")
+        em.createQuery("update Genre set genre = :genre, movieGenres = :movieGenres where genreId = :id")
                 .setParameter("genre", genre.getGenre())
                 .setParameter("movieGenres", genre.getMovieGenres())
                 .setParameter("id", genre.getGenreId());
@@ -22,5 +22,7 @@ public class GenreRepo {
         em.createQuery("delete from Genre where Genre.genreId = :genreid")
                 .setParameter("genreid", id);
     }
+    public void createGenre(Genre genre){//implements
+         }
 }
 

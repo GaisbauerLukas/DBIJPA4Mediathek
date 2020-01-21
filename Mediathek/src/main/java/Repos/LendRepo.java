@@ -5,6 +5,7 @@ import Entity.Lend;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Transactional
 public class LendRepo {
@@ -23,5 +24,17 @@ public class LendRepo {
     public void deleteLend(long id) {
         em.createQuery("delete from Lend where Lend.lendID = :lendid")
                 .setParameter("lendid", id);
+    }
+    public void createLend(Lend lend){
+        //implement
+    }
+    public void getCostOfLend(int id){
+        //implement
+    }
+    public void getCostOfLend(Lend lend){
+        //implement
+    }
+    public void createLendsByList(List<Lend> lends){
+        //implement
     }
 }
