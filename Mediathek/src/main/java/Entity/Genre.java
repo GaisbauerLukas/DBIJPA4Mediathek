@@ -14,10 +14,9 @@ public class Genre {
 
     public Genre(){}
 
-    public Genre(int genreId, String genre, List<MovieGenre> movieGenres) {
+    public Genre(int genreId, String genre) {
         this.genreId = genreId;
         this.genre = genre;
-        this.movieGenres = movieGenres;
     }
 
     public Genre(String genre, List<MovieGenre> movieGenres) {

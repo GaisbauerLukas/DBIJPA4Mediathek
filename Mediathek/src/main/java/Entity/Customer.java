@@ -15,9 +15,8 @@ public class Customer {
     int credit;
 
     public Customer(){}
-    public Customer(int customerId, CustomerDetail customerDetail, int credit) {
+    public Customer(int customerId, int credit) {
         CustomerId = customerId;
-        this.customerDetail = customerDetail;
         this.credit = credit;
     }
 
