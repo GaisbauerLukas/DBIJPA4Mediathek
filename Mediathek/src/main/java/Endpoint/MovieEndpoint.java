@@ -6,7 +6,7 @@ import Repos.MovieRepo;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-@Path("api")
+@Path("api/Movie")
 public class MovieEndpoint {
     @Inject
     MovieRepo movieRepo;

@@ -9,7 +9,7 @@ import Repos.CustomerRepo;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-@Path("api")
+@Path("api/Customer")
 public class CustomerEndpoint {
     @Inject
     CustomerRepo customerRepo;

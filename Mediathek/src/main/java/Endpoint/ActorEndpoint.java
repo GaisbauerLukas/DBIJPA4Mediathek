@@ -9,7 +9,7 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
-@Path("api")
+@Path("api/Actor")
 public class ActorEndpoint {
 
         @Inject

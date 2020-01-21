@@ -7,7 +7,7 @@ import Repos.StudioRepo;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-@Path("api")
+@Path("api/Studio")
 public class StudioEndpoint {
     @Inject
     StudioRepo studioRepo;

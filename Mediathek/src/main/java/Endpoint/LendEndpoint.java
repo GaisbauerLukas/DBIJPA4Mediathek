@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import javax.ws.rs.*;
 import java.util.List;
 
-@Path("api")
+@Path("api/Lend")
 public class LendEndpoint {
     @Inject
     LendRepo lendRepo;

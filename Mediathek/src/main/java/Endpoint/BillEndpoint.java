@@ -8,7 +8,7 @@ import Repos.BillRepo;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-@Path("app")
+@Path("api/Bill")
 public class BillEndpoint {
 
     @Inject
