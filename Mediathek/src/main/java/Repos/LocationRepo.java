@@ -23,4 +23,7 @@ public class LocationRepo {
                 .setParameter("locationId", id);
 
     }
+    public void createLocation(Location location){
+        //implement
+    }
 }
