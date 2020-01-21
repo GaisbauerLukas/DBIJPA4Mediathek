@@ -21,7 +21,7 @@ public class StudioDTO {
     @PersistenceContext
     EntityManager em;
 
-    String path = "../resources/Lend.csv";
+    String path = "../resources/Studio.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))
