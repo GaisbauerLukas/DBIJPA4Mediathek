@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Lend;
 
@@ -13,8 +13,7 @@ public class LendRepo {
 
     public void updateLend(Lend lend) {
         em.createQuery("update Lend set customer = :customer, costPerDay = :costPerDay, " +
-                "dateOfAusleihe = :dateOfAusleihe " +
-                "where lend.lendID = :id")
+                "dateOfAusleihe = :dateOfAusleihe where lendID = :id")
                 .setParameter("customer", lend.getCustomer())
                 .setParameter("costPerDay", lend.getCostPerDay())
                 .setParameter("dateOfAusleihe", lend.getDateOfAusleihe())

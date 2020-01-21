@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Customer;
 

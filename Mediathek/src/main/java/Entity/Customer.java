@@ -7,7 +7,7 @@ import javax.persistence.OneToOne;
 @Entity
 public class Customer {
     @Id
-    int CustomerId;
+    int customerId;
 
     @OneToOne
     CustomerDetail customerDetail;

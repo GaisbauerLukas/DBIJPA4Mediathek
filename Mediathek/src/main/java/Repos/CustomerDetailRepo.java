@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.CustomerDetail;
 
@@ -12,9 +12,7 @@ public class CustomerDetailRepo {
     EntityManager em;
 
     public void updateCustomerDetail(CustomerDetail cd) {
-        em.createQuery("update CustomerDetail set phoneNumber = :phoneNumber, email = :email, birthday = :birthday, " +
-                "favoriteMovie = :favoriteMovie, religion = :religion" +
-                " where customerDetail.customerId = :id")
+        em.createQuery("update CustomerDetail set phoneNumber = :phoneNumber, email = :email, birthday = :birthday, favouriteMovie = :favoriteMovie, religion = :religion where CustomerId = :id")
                 .setParameter("phoneNumber", cd.getPhoneNumber())
                 .setParameter("email", cd.getEmail())
                 .setParameter("birthday", cd.getBirthday())
