@@ -15,6 +15,10 @@ public class Store {
     List<Bill> bills;
     @ManyToOne
     Location location;
+    @OneToMany
+    List<Lend> lends;
+    @OneToMany
+    List<Movie> movies;
 
     public Store(){}
     public Store(String street, List<Employee> employees, List<Bill> bills, Location location) {
@@ -62,5 +66,21 @@ public class Store {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public List<Lend> getLends() {
+        return lends;
+    }
+
+    public void setLends(List<Lend> lends) {
+        this.lends = lends;
+    }
+
+    public List<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
     }
 }
