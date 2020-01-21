@@ -14,7 +14,6 @@ public class Studio {
 
     public Studio(String studioName, List<Movie> movies) {
         this.studioName = studioName;
-        this.movies = movies;
     }
 
     public int getStudioId() {
@@ -31,13 +30,5 @@ public class Studio {
 
     public void setStudioName(String studioName) {
         this.studioName = studioName;
-    }
-
-    public List<Movie> getMovies() {
-        return movies;
-    }
-
-    public void setMovies(List<Movie> movies) {
-        this.movies = movies;
     }
 }
