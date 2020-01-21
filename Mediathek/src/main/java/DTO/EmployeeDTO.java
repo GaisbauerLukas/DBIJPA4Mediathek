@@ -34,7 +34,7 @@ public class EmployeeDTO {
     }
 
     public List<Store> getbyId(int id){
-        List<Store> stores = em.createQuery("select s from Store s where s.getEmployees().get(:id) = :id").setParameter("id", id).getResultList();
+        //List<Store> stores = em.createQuery("select s from Store s where s.employees.get(:id) = :id").setParameter("id", id).getResultList();
         return stores;
     }
 
