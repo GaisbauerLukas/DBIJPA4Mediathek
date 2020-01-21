@@ -1,6 +1,6 @@
 package Settings;
 
-import DTO.CustomerDTO;
+import DTO.*;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
@@ -13,11 +13,38 @@ import javax.persistence.PersistenceContext;
 @Singleton
 public class InitBean {
 
-    //@Inject
-    //CustomerDTO customerDTO;
+    @Inject
+    BillDTO billDTO;
+    @Inject
+    LocationDTO locationDTO;
+    @Inject
+    ActorDTO actorDTO;
+    @Inject
+    CustomerDTO customerDTO;
+    @Inject
+    StoreDTO storeDTO;
+    @Inject
+    EmployeeDTO employeeDTO;
+    @Inject
+    GenreDTO genreDTO;
+    @Inject
+    LendDTO lendDTO;
+    @Inject
+    MovieDTO movieDTO;
+    @Inject
+    StudioDTO studioDTO;
 
     public InitBean() {
-        //customerDTO.readFromCSV();
+        billDTO.readFromCSV();
+        locationDTO.readFromCSV();
+        actorDTO.readFromCSV();
+        customerDTO.readFromCSV();
+        storeDTO.readFromCSV();
+        employeeDTO.readFromCSV();
+        genreDTO.readFromCSV();
+        lendDTO.readFromCSV();
+        movieDTO.readFromCSV();
+        storeDTO.readFromCSV();
     }
 
     @PostConstruct
