@@ -21,7 +21,7 @@ public class CustomerDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Customer(Integer.parseInt(a[0]), getbyId(Integer.parseInt(a[0])), Integer.parseInt(a[1])))
+                .map(a -> new Customer(Integer.parseInt(a[0]), Integer.parseInt(a[1])))
                 .forEach(em::merge);
     }
 

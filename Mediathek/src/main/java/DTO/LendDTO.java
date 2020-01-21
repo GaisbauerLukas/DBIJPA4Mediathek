@@ -27,12 +27,12 @@ public class LendDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Lend(Integer.parseInt(a[0]),getbyId(Integer.parseInt(a[0])) ,Integer.parseInt(a[2]), Date.valueOf(a[3])))
+                .map(a -> new Lend(Integer.parseInt(a[0]),Integer.parseInt(a[2]), Date.valueOf(a[3])))
                 .forEach(em::merge);
     }
 
     public Customer getbyId(int id){
-        Customer customer = (Customer)em.createQuery("select c from Customer c where c.getCustomerId() = :id").setParameter("id", id).getSingleResult();
+        Customer customer = (Customer)em.createQuery("select c from Customer c where c.getCustomerId = :id").setParameter("id", id).getSingleResult();
         return customer;
     }
 }
