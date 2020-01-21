@@ -63,4 +63,20 @@ public class Lend {
     public void setDateOfAusleihe(Date dateOfAusleihe) {
         this.dateOfAusleihe = dateOfAusleihe;
     }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
 }
