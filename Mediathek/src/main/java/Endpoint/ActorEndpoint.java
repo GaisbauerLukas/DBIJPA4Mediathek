@@ -30,7 +30,7 @@ public class ActorEndpoint {
             actorRepo.updateActor(actor);
         }
 
-        @Path("delete/{id}")
+        @Path("delete-{id}")
         @PUT
         public void delete(@PathParam("id") int id){
             actorRepo.deleteActor(id);
