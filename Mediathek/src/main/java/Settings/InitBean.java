@@ -13,8 +13,8 @@ import javax.persistence.PersistenceContext;
 @Singleton
 public class InitBean {
 
-    @Inject
-    CustomerDTO customerDTO;
+    //@Inject
+    //CustomerDTO customerDTO;
 
     public InitBean() {
         //customerDTO.readFromCSV();

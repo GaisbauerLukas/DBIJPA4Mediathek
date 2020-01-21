@@ -42,4 +42,5 @@ public class Employee {
     public void setStores(List<Store> store) {
         this.stores = store;
     }
+
 }
