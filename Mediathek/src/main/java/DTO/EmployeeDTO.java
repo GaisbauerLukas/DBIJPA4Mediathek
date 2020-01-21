@@ -29,12 +29,16 @@ public class EmployeeDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Employee( a[1], getbyId(Integer.parseInt(a[0]))))
+                .map(a -> new Employee( a[1], getbyId(a[2].split(","))))
                 .forEach(em::merge);
     }
 
-    public List<Store> getbyId(int id){
-        //List<Store> stores = em.createQuery("select s from Store s where s.employees.get(:id) = :id").setParameter("id", id).getResultList();
+    public List<Store> getbyId(String[] ids){
+        List<Store> stores = null;
+        for(int i = 0; i < ids.length; i++){
+            stores.add((Store)em.createQuery("select s from Store s where s.storeId = :id").setParameter("id", Integer.parseInt(ids[i])).getSingleResult());
+        }
+
         return stores;
     }
 
