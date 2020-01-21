@@ -27,7 +27,6 @@ public class Lend {
 
     public Lend(int lendID, Customer customer, int costPerDay, Date dateOfAusleihe) {
         this.lendID = lendID;
-        this.customer = customer;
         this.costPerDay = costPerDay;
         this.dateOfAusleihe = dateOfAusleihe;
     }

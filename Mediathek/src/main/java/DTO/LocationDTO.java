@@ -10,8 +10,15 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 public class LocationDTO {
+    int locationId;
+    String country;
+    String city;
+
     @PersistenceContext
     EntityManager em;
+
+    public LocationDTO() {
+    }
 
     String path = "../resources/Location.csv";
     public void readFromCSV(){
@@ -22,5 +29,29 @@ public class LocationDTO {
                 .map(s -> s.split(";"))
                 .map(a -> new Location(Integer.parseInt(a[0]), a[1], a[2]))
                 .forEach(em::merge);
+    }
+
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 }

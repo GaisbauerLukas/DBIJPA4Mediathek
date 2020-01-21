@@ -1,5 +1,7 @@
 package Entity;
 
+import DTO.CustomerDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
@@ -15,10 +17,10 @@ public class Customer {
     int credit;
 
     public Customer(){}
-    public Customer(int customerId, CustomerDetail customerDetail, int credit) {
-        customerId = customerId;
-        this.customerDetail = customerDetail;
+    public Customer(int customerId, int credit, CustomerDetail customerDetail) {
+        CustomerId = customerId;
         this.credit = credit;
+        this.customerDetail = customerDetail;
     }
 
     public int getCustomerId() {

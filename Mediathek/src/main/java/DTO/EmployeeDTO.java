@@ -12,8 +12,15 @@ import java.nio.charset.Charset;
 import java.util.*;
 
 public class EmployeeDTO {
+    int empId;
+    String name;
+    List<Store> stores;
+
     @PersistenceContext
     EntityManager em;
+
+    public EmployeeDTO() {
+    }
 
     String path = "../resources/Employee.csv";
     public void readFromCSV(){
@@ -29,5 +36,29 @@ public class EmployeeDTO {
     public List<Store> getbyId(int id){
         List<Store> stores = em.createQuery("select s from Store s where s.getEmployees().get(:id) = :id").setParameter("id", id).getResultList();
         return stores;
+    }
+
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Store> getStores() {
+        return stores;
+    }
+
+    public void setStores(List<Store> stores) {
+        this.stores = stores;
     }
 }

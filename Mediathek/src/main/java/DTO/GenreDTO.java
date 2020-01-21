@@ -12,9 +12,15 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 public class GenreDTO {
+    int genreId;
+    String genre;
+    List<MovieGenre>movieGenres;
 
     @PersistenceContext
     EntityManager em;
+
+    public GenreDTO() {
+    }
 
     String path = "../resources/Genre.csv";
     public void readFromCSV(){
@@ -30,5 +36,29 @@ public class GenreDTO {
     public List<MovieGenre> getbyId(int id){
         List<MovieGenre> movieGenres = em.createQuery("select mg from MovieGenre mg where mg.getMovieGenreID.genreId = :id").setParameter("id", id).getResultList();
         return movieGenres;
+    }
+
+    public int getGenreId() {
+        return genreId;
+    }
+
+    public void setGenreId(int genreId) {
+        this.genreId = genreId;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public List<MovieGenre> getMovieGenres() {
+        return movieGenres;
+    }
+
+    public void setMovieGenres(List<MovieGenre> movieGenres) {
+        this.movieGenres = movieGenres;
     }
 }

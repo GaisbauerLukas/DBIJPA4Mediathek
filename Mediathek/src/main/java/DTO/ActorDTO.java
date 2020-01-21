@@ -13,6 +13,12 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 public class ActorDTO {
+    int actorId;
+    String name;
+    List<ActorMovie> actorMovies;
+
+    public ActorDTO() {
+    }
 
     @PersistenceContext
     EntityManager em;
@@ -34,5 +40,27 @@ public class ActorDTO {
         return actorMovies;
     }
 
+    public int getActorId() {
+        return actorId;
+    }
 
+    public void setActorId(int actorId) {
+        this.actorId = actorId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<ActorMovie> getActorMovies() {
+        return actorMovies;
+    }
+
+    public void setActorMovies(List<ActorMovie> actorMovies) {
+        this.actorMovies = actorMovies;
+    }
 }
