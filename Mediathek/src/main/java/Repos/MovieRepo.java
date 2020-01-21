@@ -41,12 +41,20 @@ public class MovieRepo {
 
     }
     public List<Movie> getMovieByStudio(Studio studio){
-        return null;
+
+        return em.createQuery("select name from Movie where Studio.studioId= :Studio ").setParameter("Studio",studio.getStudioId()).getResultList();
+
     }
     public List<Movie> getMovieByRecordLocation(RecordLocation recordLocation){
-        return null;
+
+        return em.createQuery("select name from Movie where movieId = (select movieId from MovieLocation where movieLocationID.locationID = (select recLocId from RecordLocation where city = :Location )) ").setParameter("Location",recordLocation).getResultList();
+
     }
     public Boolean isLend(Movie movie){
+
+        int cnt = (int)em.createQuery("select count(lendID) from Lend where Movie.name = :Movie").setParameter("Movie",movie).getSingleResult();
+        if(cnt ==1)return true;
         return false;
+
     }
 }
