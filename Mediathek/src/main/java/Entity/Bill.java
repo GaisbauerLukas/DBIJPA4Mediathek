@@ -14,7 +14,8 @@ public class Bill {
     public Bill(){
     }
 
-    public Bill(String movie, int cost, List<Store> store) {
+    public Bill(int billId, String movie, int cost) {
+        this.billId = billId;
         this.movie = movie;
         this.cost = cost;
     }

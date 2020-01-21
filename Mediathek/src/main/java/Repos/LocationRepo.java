@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Location;
 
@@ -12,16 +12,15 @@ public class LocationRepo {
     EntityManager em;
 
     public void updateLocation(Location location) {
-        em.createQuery("update Location set country = :country, city = :city, stores = :stores " +
-                "where location.locationId = :id")
+        em.createQuery("update Location set country = :country, city = :city where locationId = :id")
                 .setParameter("country", location.getCountry())
                 .setParameter("city", location.getCity())
-                .setParameter("stores", location.getStores())
                 .setParameter("id", location.getLocationId());
     }
 
     public void deleteLocation(long id) {
         em.createQuery("delete from Location where Location.locationId = :locationId")
                 .setParameter("locationId", id);
+
     }
 }

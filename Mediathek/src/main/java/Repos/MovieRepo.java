@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Movie;
 
@@ -14,7 +14,7 @@ public class MovieRepo {
     public void updateMovie(Movie movie) {
         em.createQuery("update Movie set name = :name, actorMovies = :actorMovies, movieLocations = :movieLocations, " +
                 "movieGenres = :movieGenres, studio = :studio " +
-                "where movie.mobieId = :id")
+                "where movieId = :id")
                 .setParameter("name", movie.getName())
                 .setParameter("actorMovies", movie.getActorMovies())
                 .setParameter("movieLocations", movie.getMovieLocations())

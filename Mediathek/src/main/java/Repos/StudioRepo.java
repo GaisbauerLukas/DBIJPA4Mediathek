@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Studio;
 
@@ -12,9 +12,8 @@ public class StudioRepo {
     EntityManager em;
 
     public void updateStudio(Studio studio) {
-        em.createQuery("update Studio set studioName = :studioName, movies = :movies where movies.movieId = :id")
+        em.createQuery("update Studio set studioName = :studioName where studioId = :id")
                 .setParameter("studioName", studio.getStudioName())
-                .setParameter("movies", studio.getMovies())
                 .setParameter("id", studio.getStudioId());
     }
 

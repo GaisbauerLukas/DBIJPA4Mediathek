@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Employee;
 
@@ -12,14 +12,13 @@ public class EmplyoeeRepo {
     EntityManager em;
 
     public void updateEmployee(Employee employee) {
-        em.createQuery("update Employee set name = :name, store = :store where employee.empId = :id")
+        em.createQuery("update Employee set name = :name WHERE empId = :empID")
                 .setParameter("name", employee.getName())
-                .setParameter("store", employee.getStore())
-                .setParameter("id", employee.getEmpId());
+                .setParameter("empID", employee.getEmpId());;
     }
 
     public void deleteEmployee(long id) {
-        em.createQuery("delete from Employee where Employee.empiId = :empid")
+        em.createQuery("delete from Employee where empId = :empid")
                 .setParameter("empid", id);
     }
 }

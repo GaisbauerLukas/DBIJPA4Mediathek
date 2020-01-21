@@ -3,6 +3,7 @@ package Entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import java.util.Date;
 
 @Entity
@@ -13,6 +14,12 @@ public class Lend {
     @ManyToOne
     Customer customer;
 
+    @ManyToOne
+    Store store;
+
+    @OneToOne
+    Movie movie;
+
     int costPerDay;
     Date dateOfAusleihe;
 
@@ -20,7 +27,6 @@ public class Lend {
 
     public Lend(int lendID, Customer customer, int costPerDay, Date dateOfAusleihe) {
         this.lendID = lendID;
-        this.customer = customer;
         this.costPerDay = costPerDay;
         this.dateOfAusleihe = dateOfAusleihe;
     }
@@ -55,5 +61,21 @@ public class Lend {
 
     public void setDateOfAusleihe(Date dateOfAusleihe) {
         this.dateOfAusleihe = dateOfAusleihe;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public Movie getMovie() {
+        return movie;
+    }
+
+    public void setMovie(Movie movie) {
+        this.movie = movie;
     }
 }

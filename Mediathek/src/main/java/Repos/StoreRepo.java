@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Store;
 
@@ -13,7 +13,7 @@ public class StoreRepo {
 
     public void updateStore(Store store) {
         em.createQuery("update Store set street = :street, employees = :employees, bills = :bills, location = :location " +
-                "where store.storeId = :id")
+                "where storeId = :id")
                 .setParameter("street", store.getStreet())
                 .setParameter("employees", store.getEmployees())
                 .setParameter("bills", store.getBills())

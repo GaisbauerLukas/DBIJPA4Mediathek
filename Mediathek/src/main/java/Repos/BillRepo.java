@@ -1,4 +1,4 @@
-package Repo;
+package Repos;
 
 import Entity.Bill;
 
@@ -13,10 +13,9 @@ public class BillRepo {
     EntityManager em;
 
     public void updateBill(Bill bill) {
-        em.createQuery("update Bill set movie = :movie, cost = :cost, store = :store where bill.billId = :id")
+        em.createQuery("update Bill set movie = :movie, cost = :cost where billId = :id")
                 .setParameter("movie", bill.getMovie())
                 .setParameter("cost", bill.getCost())
-                .setParameter("store", bill.getStore())
                 .setParameter("id", bill.getBillId());
     }
 
