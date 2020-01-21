@@ -33,7 +33,7 @@ public class MovieDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Movie(a[1], getActorMoviesbyId(Integer.parseInt(a[0])), getMovieLocationsbyId(Integer.parseInt(a[0])), getMovieGenresbyId(Integer.parseInt(a[0])), getStudiobyId(Integer.parseInt(a[2])), getLendbyId(Integer.parseInt(a[3])), getStorebId(Integer.parseInt(a[4]))))
+                .map(a -> new Movie(a[1], getActorMoviesbyId(Integer.parseInt(a[0])), getMovieLocationsbyId(Integer.parseInt(a[0])), getMovieGenresbyId(Integer.parseInt(a[0])), getStudiobyId(Integer.parseInt(a[2])), getLendbyId(Integer.parseInt(a[3])), getStorebyId(Integer.parseInt(a[4]))))
                 .forEach(em::merge);
     }
 
@@ -62,7 +62,7 @@ public class MovieDTO {
         return lend;
     }
 
-    public Store getStorebId(int id){
+    public Store getStorebyId(int id){
         Store store = (Store)em.createQuery("select s from Store s where s.storeId = :id").setParameter("id", id).getSingleResult();
         return store;
     }
