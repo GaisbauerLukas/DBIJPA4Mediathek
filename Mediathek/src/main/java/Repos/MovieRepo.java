@@ -31,12 +31,14 @@ public class MovieRepo {
     public void createMovie(Movie movie){
         em.persist(movie);
     }
-    public List<Movie> getMovieByGenere(Genre genre){
-        return null;
+    public List<Movie> getMovieByGenre(Genre genre){
+        return em.createQuery("select name from Movie where movieId = (select movieId from MovieGenre where movieGenreID.genreId = (select movieGenreID.genreId from Genre where genre = :Genre )) ").setParameter("Genre",genre.getGenre()).getResultList();
     }
 
     public List<Movie> getMovieByActor(Actor actor){
-        return null;
+
+        return em.createQuery("select name from Movie where movieId = (select movieId from ActorMovie where actorMovieID.actorId = (select actorMovieID.actorId from ActorMovie where actorMovieID.actorId = :Actor )) ").setParameter("Actor",actor.getActorId()).getResultList();
+
     }
     public List<Movie> getMovieByStudio(Studio studio){
         return null;
