@@ -26,7 +26,7 @@ public class LendRepo {
                 .setParameter("lendid", id);
     }
     public void createLend(Lend lend){
-        //implement
+        em.persist(lend);
     }
     public void getCostOfLend(int id){
         //implement

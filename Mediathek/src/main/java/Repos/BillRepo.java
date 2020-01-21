@@ -27,7 +27,7 @@ public class BillRepo {
                 .setParameter("billid", id);
     }
     public void createBill(Bill bill){
-        //implement
+        em.persist(bill);
     }
     public void createBillOfLend(Lend lend){
         //implement delete rend get cost out of rend(via Rend Repo and create new bill

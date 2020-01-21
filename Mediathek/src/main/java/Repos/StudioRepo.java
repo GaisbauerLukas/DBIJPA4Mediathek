@@ -23,6 +23,6 @@ public class StudioRepo {
     }
 
     public void createStudio(Studio studio){
-        //implement
+        em.persist(studio);
     }
 }

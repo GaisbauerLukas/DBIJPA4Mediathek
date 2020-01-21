@@ -22,6 +22,6 @@ public class CustomerRepo {
                 .setParameter("customerid", id);
     }
     public void createCustomer(Customer customer){
-        //implement
+        em.persist(customer);
     }
 }

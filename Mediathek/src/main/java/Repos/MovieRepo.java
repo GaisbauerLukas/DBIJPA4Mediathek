@@ -29,7 +29,7 @@ public class MovieRepo {
                 .setParameter("movieid", id);
     }
     public void createMovie(Movie movie){
-        //implement
+        em.persist(movie);
     }
     public List<Movie> getMovieByGenere(Genre genre){
         return null;

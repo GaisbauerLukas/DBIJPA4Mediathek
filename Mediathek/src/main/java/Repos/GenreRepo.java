@@ -22,7 +22,9 @@ public class GenreRepo {
         em.createQuery("delete from Genre where genreId = :genreid")
                 .setParameter("genreid", id);
     }
-    public void createGenre(Genre genre){//implements
-         }
+
+    public void createGenre(Genre genre){
+        em.persist(genre);
+    }
 }
 

@@ -30,7 +30,7 @@ public class StoreRepo {
                 .setParameter("storeid", id);
     }
     public void createStore(Store store){
-        //implement
+        em.persist(store);
     }
     public List<Lend> getLendsOfStore(Store store){
         //implement

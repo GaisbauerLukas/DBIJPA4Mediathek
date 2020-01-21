@@ -24,6 +24,6 @@ public class LocationRepo {
 
     }
     public void createLocation(Location location){
-        //implement
+        em.persist(location);
     }
 }
