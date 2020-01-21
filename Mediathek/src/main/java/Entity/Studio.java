@@ -9,8 +9,12 @@ public class Studio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int studioId;
     String studioName;
-    @ManyToOne
-    List<Movie> movies;
+
+    public Studio(){}
+
+    public Studio(String studioName, List<Movie> movies) {
+        this.studioName = studioName;
+    }
 
     public int getStudioId() {
         return studioId;
@@ -26,13 +30,5 @@ public class Studio {
 
     public void setStudioName(String studioName) {
         this.studioName = studioName;
-    }
-
-    public List<Movie> getMovies() {
-        return movies;
-    }
-
-    public void setMovies(List<Movie> movies) {
-        this.movies = movies;
     }
 }

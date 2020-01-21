@@ -9,8 +9,21 @@ public class Genre {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int genreId;
     String genre;
-    @ManyToOne
+    @OneToMany
     List<MovieGenre>movieGenres;
+
+    public Genre(){}
+
+    public Genre(int genreId, String genre, List<MovieGenre> movieGenres) {
+        this.genreId = genreId;
+        this.genre = genre;
+        this.movieGenres = movieGenres;
+    }
+
+    public Genre(String genre, List<MovieGenre> movieGenres) {
+        this.genre = genre;
+        this.movieGenres = movieGenres;
+    }
 
     public int getGenreId() {
         return genreId;

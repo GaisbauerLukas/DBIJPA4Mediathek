@@ -9,12 +9,24 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int storeId;
     String street;
-    @ManyToOne
-    List<Employee> employees;
-    @ManyToOne
-    List<Bill> bills;
     @OneToMany
+    List<Employee> employees;
+    @OneToMany
+    List<Bill> bills;
+    @ManyToOne
     Location location;
+    @OneToMany
+    List<Lend> lends;
+    @OneToMany
+    List<Movie> movies;
+
+    public Store(){}
+    public Store(String street, List<Employee> employees, List<Bill> bills, Location location) {
+        this.street = street;
+        this.employees = employees;
+        this.bills = bills;
+        this.location = location;
+    }
 
     public int getStoreId() {
         return storeId;
@@ -54,5 +66,21 @@ public class Store {
 
     public void setLocation(Location location) {
         this.location = location;
+    }
+
+    public List<Lend> getLends() {
+        return lends;
+    }
+
+    public void setLends(List<Lend> lends) {
+        this.lends = lends;
+    }
+
+    public List<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
     }
 }

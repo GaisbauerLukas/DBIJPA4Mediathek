@@ -1,0 +1,14 @@
+Tue Jan 21 11:31:27 CET 2020 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Tue Jan 21 11:31:53 CET 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016f-c7a8-3418-00000556a7a8 
+on database directory /home/lukas/Dokumente/Repos/DBIJPA4Mediathek/DB/db with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487 
+Loaded from file:/home/lukas/Dokumente/Repos/DBIJPA4Mediathek/DB/db-derby-10.14.2.0-bin/lib/derby.jar
+java.vendor=Private Build
+java.runtime.version=11.0.5+10-post-Ubuntu-0ubuntu1.118.04
+user.dir=/home/lukas/Dokumente/Repos/DBIJPA4Mediathek/DB
+os.name=Linux
+os.arch=amd64
+os.version=4.15.0-20-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
