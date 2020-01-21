@@ -18,7 +18,7 @@ public class StudioRepo {
     }
 
     public void deleteStudio(long id) {
-        em.createQuery("delete from Studio where Studio.studioId = :studioid")
+        em.createQuery("delete from Studio where studioId = :studioid")
                 .setParameter("studioid", id);
     }
 

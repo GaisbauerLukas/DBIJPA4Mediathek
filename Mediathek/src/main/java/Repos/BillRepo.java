@@ -23,7 +23,7 @@ public class BillRepo {
     }
 
     public void deleteBill(long id) {
-        em.createQuery("delete from Bill where Bill.billId = :billid")
+        em.createQuery("delete from Bill where billId = :billid")
                 .setParameter("billid", id);
     }
     public void createBill(Bill bill){

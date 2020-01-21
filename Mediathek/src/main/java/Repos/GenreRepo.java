@@ -19,7 +19,7 @@ public class GenreRepo {
     }
 
     public void deleteGenre(long id) {
-        em.createQuery("delete from Genre where Genre.genreId = :genreid")
+        em.createQuery("delete from Genre where genreId = :genreid")
                 .setParameter("genreid", id);
     }
     public void createGenre(Genre genre){//implements

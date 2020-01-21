@@ -22,7 +22,7 @@ public class LendRepo {
     }
 
     public void deleteLend(long id) {
-        em.createQuery("delete from Lend where Lend.lendID = :lendid")
+        em.createQuery("delete from Lend where lendID = :lendid")
                 .setParameter("lendid", id);
     }
     public void createLend(Lend lend){

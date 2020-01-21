@@ -26,7 +26,7 @@ public class StoreRepo {
     }
 
     public void deleteStore(long id) {
-        em.createQuery("delete from Store where Store.storeId = :storeid")
+        em.createQuery("delete from Store where storeId = :storeid")
                 .setParameter("storeid", id);
     }
     public void createStore(Store store){

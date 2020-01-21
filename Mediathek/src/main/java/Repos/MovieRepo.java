@@ -25,7 +25,7 @@ public class MovieRepo {
     }
 
     public void deleteMovie(long id) {
-        em.createQuery("delete from Movie where Movie.movieId = :movieid")
+        em.createQuery("delete from Movie where movieId = :movieid")
                 .setParameter("movieid", id);
     }
     public void createMovie(Movie movie){

@@ -12,13 +12,13 @@ public class CustomerRepo {
     EntityManager em;
 
     public void updateCustomer(Customer customer) {
-        em.createQuery("update Customer set credit = :credit where Customer.customerId = :id")
+        em.createQuery("update Customer set credit = :credit where customerId = :id")
                 .setParameter("credit", customer.getCredit())
                 .setParameter("id", customer.getCustomerId());
     }
 
     public void deleteCustomer(long id) {
-        em.createQuery("delete from Customer where Customer.customerId = :customerid")
+        em.createQuery("delete from Customer where customerId = :customerid")
                 .setParameter("customerid", id);
     }
     public void createCustomer(Customer customer){
