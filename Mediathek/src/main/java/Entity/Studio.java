@@ -9,8 +9,6 @@ public class Studio {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int studioId;
     String studioName;
-    @OneToMany
-    List<Movie> movies;
 
     public Studio(){}
 
