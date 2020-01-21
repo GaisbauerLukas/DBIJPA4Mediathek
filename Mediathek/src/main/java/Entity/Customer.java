@@ -16,17 +16,17 @@ public class Customer {
 
     public Customer(){}
     public Customer(int customerId, CustomerDetail customerDetail, int credit) {
-        CustomerId = customerId;
+        customerId = customerId;
         this.customerDetail = customerDetail;
         this.credit = credit;
     }
 
     public int getCustomerId() {
-        return CustomerId;
+        return customerId;
     }
 
     public void setCustomerId(int customerId) {
-        CustomerId = customerId;
+        customerId = customerId;
     }
 
     public CustomerDetail getCustomerDetail() {
