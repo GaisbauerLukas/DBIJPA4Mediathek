@@ -26,21 +26,22 @@ public class StoreRepo {
     }
 
     public void deleteStore(long id) {
-        em.createQuery("delete from Store where Store.storeId = :storeid")
+        em.createQuery("delete from Store where storeId = :storeid")
                 .setParameter("storeid", id);
     }
     public void createStore(Store store){
-        //implement
+        em.persist(store);
     }
     public List<Lend> getLendsOfStore(Store store){
-        //implement
-        return null;
+        return em.createQuery("select lendID from Lend where store.storeId = :Store").setParameter("Store",store).getResultList();
     }
     public List<Customer> getCustomersOfStore(Store store){
-        return null;
+
+        return  em.createQuery("select customerId from Customer where customerId in (select customerId from Lend where store.storeId = :Store)").setParameter("Store",store.getStoreId()).getResultList();
     }
     public List<Movie> getMoviesOfStore(Store store){
-        return null;
+
+        return em.createQuery("select movieId from Movie where movieId in (select movieId from Store where storeId = :Store)").setParameter("Store",store.getStoreId()).getResultList();
     }
     public void createLendOfStore(Lend lend, Store store){
         //implement

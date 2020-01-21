@@ -5,6 +5,8 @@ import Entity.Lend;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 @Transactional
@@ -22,19 +24,29 @@ public class LendRepo {
     }
 
     public void deleteLend(long id) {
-        em.createQuery("delete from Lend where Lend.lendID = :lendid")
+        em.createQuery("delete from Lend where lendID = :lendid")
                 .setParameter("lendid", id);
     }
     public void createLend(Lend lend){
-        //implement
+        em.persist(lend);
     }
-    public void getCostOfLend(int id){
-        //implement
+    public int getCostOfLend(int id){
+        GregorianCalendar date = (GregorianCalendar)em.createQuery("select dateOfAusleihe from Lend  where  lendID = :Id").setParameter("Id",id).getSingleResult();
+        GregorianCalendar today = new GregorianCalendar();
+        int cost=(int)em.createQuery("select costPerDay from Lend where lendID = :Id").setParameter("Id",id).getSingleResult();
+        int daysoff=(int)(today.getTimeInMillis()-date.getTimeInMillis()) / (1000*60*60*24);
+        return cost*daysoff;
     }
-    public void getCostOfLend(Lend lend){
-        //implement
+    public int getCostOfLend(Lend lend){
+        GregorianCalendar date = (GregorianCalendar)em.createQuery("select dateOfAusleihe from Lend  where  lendID = :Id").setParameter("Id",lend.getLendID()).getSingleResult();
+        GregorianCalendar today = new GregorianCalendar();
+        int cost=(int)em.createQuery("select costPerDay from Lend where lendID = :Id").setParameter("Id",lend.getLendID()).getSingleResult();
+        int daysoff=(int)(today.getTimeInMillis()-date.getTimeInMillis()) / (1000*60*60*24);
+        return cost*daysoff;
     }
     public void createLendsByList(List<Lend> lends){
-        //implement
+        for (Lend lend: lends) {
+            em.persist(lend);
+        }
     }
 }

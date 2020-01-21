@@ -21,11 +21,14 @@ public class Store {
     List<Movie> movies;
 
     public Store(){}
-    public Store(String street, List<Employee> employees, List<Bill> bills, Location location) {
+
+    public Store(String street, List<Employee> employees, List<Bill> bills, Location location, List<Lend> lends, List<Movie> movies) {
         this.street = street;
         this.employees = employees;
         this.bills = bills;
         this.location = location;
+        this.lends = lends;
+        this.movies = movies;
     }
 
     public int getStoreId() {

@@ -26,6 +26,6 @@ public class CustomerDetailRepo {
                 .setParameter("cdid", id);
     }
     public void createCustomerDetail(CustomerDetail customerDetail){
-        //implement
+        em.persist(customerDetail);
     }
 }

@@ -27,7 +27,7 @@ public class LocationDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Location(Integer.parseInt(a[0]), a[1], a[2]))
+                .map(a -> new Location(a[1], a[2]))
                 .forEach(em::merge);
     }
 

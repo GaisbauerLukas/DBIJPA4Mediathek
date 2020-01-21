@@ -29,12 +29,12 @@ public class EmployeeDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Employee(Integer.parseInt(a[0]), a[1], getbyId(Integer.parseInt(a[0]))))
+                .map(a -> new Employee( a[1], getbyId(Integer.parseInt(a[0]))))
                 .forEach(em::merge);
     }
 
     public List<Store> getbyId(int id){
-        List<Store> stores = em.createQuery("select s from Store s where s.getEmployees().get(:id) = :id").setParameter("id", id).getResultList();
+        //List<Store> stores = em.createQuery("select s from Store s where s.employees.get(:id) = :id").setParameter("id", id).getResultList();
         return stores;
     }
 

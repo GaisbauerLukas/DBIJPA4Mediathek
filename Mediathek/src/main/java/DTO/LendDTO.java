@@ -33,7 +33,7 @@ public class LendDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Lend(Integer.parseInt(a[0]), getbyId(Integer.parseInt(a[3])),Integer.parseInt(a[2]), Date.valueOf(a[2])))
+                .map(a -> new Lend(getbyId(Integer.parseInt(a[3])),Integer.parseInt(a[2]), Date.valueOf(a[2])))
                 .forEach(em::merge);
     }
 

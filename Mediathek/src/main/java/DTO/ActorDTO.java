@@ -31,7 +31,7 @@ public class ActorDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Actor(Integer.parseInt(a[0]), a[1], getbyId(Integer.parseInt(a[0]))))
+                .map(a -> new Actor( a[1], getbyId(Integer.parseInt(a[0]))))
                 .forEach(em::merge);
     }
 

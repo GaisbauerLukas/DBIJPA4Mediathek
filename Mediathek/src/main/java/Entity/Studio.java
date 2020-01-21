@@ -10,6 +10,9 @@ public class Studio {
     int studioId;
     String studioName;
 
+    @OneToMany
+    List<Movie> movies;
+
     public Studio(){}
 
     public Studio(String studioName, List<Movie> movies) {
@@ -30,5 +33,13 @@ public class Studio {
 
     public void setStudioName(String studioName) {
         this.studioName = studioName;
+    }
+
+    public List<Movie> getMovies() {
+        return movies;
+    }
+
+    public void setMovies(List<Movie> movies) {
+        this.movies = movies;
     }
 }
