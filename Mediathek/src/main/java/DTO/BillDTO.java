@@ -9,9 +9,15 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 public class BillDTO {
+    int billId;
+    String movie;
+    int cost;
 
     @PersistenceContext
     EntityManager entityManager;
+
+    public BillDTO() {
+    }
 
     String path = "../resources/csv/Bill.csv";
     public void readFromCSV(){
@@ -22,5 +28,29 @@ public class BillDTO {
                 .map(s -> s.split(";"))
                 .map(a -> new Bill(Integer.parseInt(a[0]), a[1], Integer.parseInt(a[2])))
                 .forEach(entityManager::merge);
+    }
+
+    public int getBillId() {
+        return billId;
+    }
+
+    public void setBillId(int billId) {
+        this.billId = billId;
+    }
+
+    public String getMovie() {
+        return movie;
+    }
+
+    public void setMovie(String movie) {
+        this.movie = movie;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 }

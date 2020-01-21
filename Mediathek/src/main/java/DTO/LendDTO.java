@@ -15,10 +15,16 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class LendDTO {
+    int lendID;
+    Customer customer;
+    int costPerDay;
+    Date dateOfAusleihe;
+
     @PersistenceContext
     EntityManager em;
 
-
+    public LendDTO() {
+    }
 
     String path = "../resources/Lend.csv";
     public void readFromCSV(){
@@ -27,12 +33,44 @@ public class LendDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Lend(Integer.parseInt(a[0]),Integer.parseInt(a[2]), Date.valueOf(a[3])))
+                .map(a -> new Lend(Integer.parseInt(a[0]), getbyId(Integer.parseInt(a[3])),Integer.parseInt(a[2]), Date.valueOf(a[2])))
                 .forEach(em::merge);
     }
 
     public Customer getbyId(int id){
         Customer customer = (Customer)em.createQuery("select c from Customer c where c.getCustomerId = :id").setParameter("id", id).getSingleResult();
         return customer;
+    }
+
+    public int getLendID() {
+        return lendID;
+    }
+
+    public void setLendID(int lendID) {
+        this.lendID = lendID;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public int getCostPerDay() {
+        return costPerDay;
+    }
+
+    public void setCostPerDay(int costPerDay) {
+        this.costPerDay = costPerDay;
+    }
+
+    public Date getDateOfAusleihe() {
+        return dateOfAusleihe;
+    }
+
+    public void setDateOfAusleihe(Date dateOfAusleihe) {
+        this.dateOfAusleihe = dateOfAusleihe;
     }
 }
