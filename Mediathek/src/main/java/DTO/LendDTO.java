@@ -11,14 +11,15 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class LendDTO {
     int lendID;
     Customer customer;
-    int costPerDay;
-    Date dateOfAusleihe;
+    Double costPerDay;
+    LocalDate dateOfAusleihe;
 
     @PersistenceContext
     EntityManager em;
@@ -33,7 +34,7 @@ public class LendDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Lend(getbyId(Integer.parseInt(a[3])),Integer.parseInt(a[2]), Date.valueOf(a[2])))
+                .map(a -> new Lend(getbyId(Integer.parseInt(a[3])),Double.parseDouble(a[1]), LocalDate.parse(a[2])))
                 .forEach(em::merge);
     }
 
@@ -58,19 +59,19 @@ public class LendDTO {
         this.customer = customer;
     }
 
-    public int getCostPerDay() {
+    public Double getCostPerDay() {
         return costPerDay;
     }
 
-    public void setCostPerDay(int costPerDay) {
+    public void setCostPerDay(Double costPerDay) {
         this.costPerDay = costPerDay;
     }
 
-    public Date getDateOfAusleihe() {
+    public LocalDate getDateOfAusleihe() {
         return dateOfAusleihe;
     }
 
-    public void setDateOfAusleihe(Date dateOfAusleihe) {
+    public void setDateOfAusleihe(LocalDate dateOfAusleihe) {
         this.dateOfAusleihe = dateOfAusleihe;
     }
 }

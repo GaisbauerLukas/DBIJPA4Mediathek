@@ -1,14 +1,17 @@
-package Entity;
+package DTO;
 
+import Entity.Actor;
+import Entity.CustomerDetail;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.sql.Date;
 import java.time.LocalDate;
-import java.util.Date;
 
-@Entity
-public class CustomerDetail {
-    @Id
+public class CustomerDetailDTO {
     int CustomerId;
 
     String phoneNumber;
@@ -17,17 +20,23 @@ public class CustomerDetail {
     String favouriteMovie;
     String religion;
 
-    public CustomerDetail(){
 
+    @PersistenceContext
+    EntityManager em;
+
+    public CustomerDetailDTO() {
     }
 
-    public CustomerDetail(int customerId, String phoneNumber, String email, LocalDate birthday, String favouriteMovie, String religion) {
-        CustomerId = customerId;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.birthday = birthday;
-        this.favouriteMovie = favouriteMovie;
-        this.religion = religion;
+    String path = "../resources/csv/Actor.csv";
+
+    public void readFromCSV(){
+        new BufferedReader(new InputStreamReader(this.getClass()
+                .getResourceAsStream(path), Charset.defaultCharset()))
+                .lines()
+                .skip(1)
+                .map(s -> s.split(";"))
+                .map(a -> new CustomerDetail(Integer.parseInt(a[0]), a[1], a[2], LocalDate.parse(a[3]), a[4], a[5]))
+                .forEach(em::merge);
     }
 
     public int getCustomerId() {

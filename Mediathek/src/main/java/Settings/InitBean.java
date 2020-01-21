@@ -33,18 +33,21 @@ public class InitBean {
     MovieDTO movieDTO;
     @Inject
     StudioDTO studioDTO;
+    @Inject
+    CustomerDetailDTO customerDetailDTO;
 
     public InitBean() {
         billDTO.readFromCSV();
         locationDTO.readFromCSV();
-        actorDTO.readFromCSV();
+        customerDetailDTO.readFromCSV();
         customerDTO.readFromCSV();
+        actorDTO.readFromCSV();
         storeDTO.readFromCSV();
         employeeDTO.readFromCSV();
         genreDTO.readFromCSV();
         lendDTO.readFromCSV();
         movieDTO.readFromCSV();
-        storeDTO.readFromCSV();
+        studioDTO.readFromCSV();
     }
 
     @PostConstruct
