@@ -43,7 +43,4 @@ public class StoreRepo {
 
         return em.createQuery("select movieId from Movie where movieId in (select movieId from Store where storeId = :Store)").setParameter("Store",store.getStoreId()).getResultList();
     }
-    public void createLendOfStore(Lend lend, Store store){
-        //implement
-    }
 }
