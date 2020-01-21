@@ -19,11 +19,11 @@ public class LocationRepo {
     }
 
     public void deleteLocation(long id) {
-        em.createQuery("delete from Location where Location.locationId = :locationId")
+        em.createQuery("delete from Location where locationId = :locationId")
                 .setParameter("locationId", id);
 
     }
     public void createLocation(Location location){
-        //implement
+        em.persist(location);
     }
 }

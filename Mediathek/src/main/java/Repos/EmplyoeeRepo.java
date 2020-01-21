@@ -22,6 +22,6 @@ public class EmplyoeeRepo {
                 .setParameter("empid", id);
     }
     public void createEmployee(Employee employee){
-        //implement
+        em.persist(employee);
     }
 }
