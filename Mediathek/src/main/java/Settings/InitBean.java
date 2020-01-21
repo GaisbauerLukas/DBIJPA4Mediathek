@@ -17,7 +17,7 @@ public class InitBean {
     CustomerDTO customerDTO;
 
     public InitBean() {
-        customerDTO.readFromCSV();
+        //customerDTO.readFromCSV();
     }
 
     @PostConstruct
