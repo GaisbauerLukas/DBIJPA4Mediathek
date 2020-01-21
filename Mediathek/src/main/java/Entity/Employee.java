@@ -18,11 +18,6 @@ public class Employee {
         this.stores = store;
     }
 
-    public Employee(int empId, String name, List<Store> stores) {
-        this.empId = empId;
-        this.name = name;
-        this.stores = stores;
-    }
 
     public int getEmpId() {
         return empId;

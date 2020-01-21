@@ -26,7 +26,7 @@ public class BillDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Bill(Integer.parseInt(a[0]), a[1], Integer.parseInt(a[2])))
+                .map(a -> new Bill( a[1], Integer.parseInt(a[2])))
                 .forEach(entityManager::merge);
     }
 

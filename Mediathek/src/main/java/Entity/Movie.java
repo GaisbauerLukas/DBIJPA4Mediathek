@@ -10,7 +10,6 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int movieId;
     String name;
-    Date releaseDate;
     @OneToMany
     List<ActorMovie> actorMovies;
     @OneToMany
@@ -26,13 +25,14 @@ public class Movie {
 
     public Movie(){}
 
-    public Movie(String name, List<ActorMovie> actorMovies, List<MovieLocation> movieLocations, List<MovieGenre> movieGenres, Studio studio, Date releaseDate) {
+    public Movie(String name, List<ActorMovie> actorMovies, List<MovieLocation> movieLocations, List<MovieGenre> movieGenres, Studio studio, Lend lend, Store store) {
         this.name = name;
         this.actorMovies = actorMovies;
         this.movieLocations = movieLocations;
         this.movieGenres = movieGenres;
         this.studio = studio;
-        this.releaseDate = releaseDate;
+        this.lend = lend;
+        this.store = store;
     }
 
     public int getMovieId() {
@@ -81,14 +81,6 @@ public class Movie {
 
     public void setStudio(Studio studio) {
         this.studio = studio;
-    }
-
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(Date releaseDate) {
-        this.releaseDate = releaseDate;
     }
 
     public Lend getLend() {

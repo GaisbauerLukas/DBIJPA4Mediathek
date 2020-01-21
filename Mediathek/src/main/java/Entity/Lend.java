@@ -25,8 +25,7 @@ public class Lend {
 
     public Lend(){}
 
-    public Lend(int lendID, Customer customer, int costPerDay, Date dateOfAusleihe) {
-        this.lendID = lendID;
+    public Lend( Customer customer, int costPerDay, Date dateOfAusleihe) {
         this.costPerDay = costPerDay;
         this.dateOfAusleihe = dateOfAusleihe;
     }
