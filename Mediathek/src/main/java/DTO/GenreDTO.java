@@ -12,9 +12,7 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 public class GenreDTO {
-    int genreId;
-    String genre;
-    List<MovieGenre>movieGenres;
+
 
     @PersistenceContext
     EntityManager em;
@@ -38,27 +36,5 @@ public class GenreDTO {
         return movieGenres;
     }
 
-    public int getGenreId() {
-        return genreId;
-    }
 
-    public void setGenreId(int genreId) {
-        this.genreId = genreId;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public List<MovieGenre> getMovieGenres() {
-        return movieGenres;
-    }
-
-    public void setMovieGenres(List<MovieGenre> movieGenres) {
-        this.movieGenres = movieGenres;
-    }
 }
