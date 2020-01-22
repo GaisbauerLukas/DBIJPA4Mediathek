@@ -12,9 +12,7 @@ import java.nio.charset.Charset;
 import java.util.*;
 
 public class EmployeeDTO {
-    int empId;
-    String name;
-    List<Store> stores;
+
 
     @PersistenceContext
     EntityManager em;
@@ -42,27 +40,5 @@ public class EmployeeDTO {
         return stores;
     }
 
-    public int getEmpId() {
-        return empId;
-    }
 
-    public void setEmpId(int empId) {
-        this.empId = empId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Store> getStores() {
-        return stores;
-    }
-
-    public void setStores(List<Store> stores) {
-        this.stores = stores;
-    }
 }

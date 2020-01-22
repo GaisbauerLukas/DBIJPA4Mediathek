@@ -16,10 +16,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class LendDTO {
-    int lendID;
-    Customer customer;
-    Double costPerDay;
-    LocalDate dateOfAusleihe;
+
 
     @PersistenceContext
     EntityManager em;
@@ -43,35 +40,5 @@ public class LendDTO {
         return customer;
     }
 
-    public int getLendID() {
-        return lendID;
-    }
 
-    public void setLendID(int lendID) {
-        this.lendID = lendID;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Double getCostPerDay() {
-        return costPerDay;
-    }
-
-    public void setCostPerDay(Double costPerDay) {
-        this.costPerDay = costPerDay;
-    }
-
-    public LocalDate getDateOfAusleihe() {
-        return dateOfAusleihe;
-    }
-
-    public void setDateOfAusleihe(LocalDate dateOfAusleihe) {
-        this.dateOfAusleihe = dateOfAusleihe;
-    }
 }
