@@ -21,7 +21,7 @@ public class MovieDTO {
 
     }
 
-    String path = "../resources/Movie.csv";
+    String path = "/csv/Movie.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

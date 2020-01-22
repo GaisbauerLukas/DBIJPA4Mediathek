@@ -10,17 +10,17 @@ public class ActorMovie {
     }
 
     @EmbeddedId
-    private ActorMovieID actorMovieID;
+    private ActorMovieID actorMovieId;
 
     public ActorMovie(ActorMovieID actorMovieID) {
-        this.actorMovieID = actorMovieID;
+        this.actorMovieId = actorMovieID;
     }
 
-    public ActorMovieID getActorMovieID() {
-        return actorMovieID;
+    public ActorMovieID getActorMovieId() {
+        return actorMovieId;
     }
 
-    public void setActorMovieID(ActorMovieID actorMovieID) {
-        this.actorMovieID = actorMovieID;
+    public void setActorMovieId(ActorMovieID actorMovieId) {
+        this.actorMovieId = actorMovieId;
     }
 }

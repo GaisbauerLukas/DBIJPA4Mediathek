@@ -20,7 +20,7 @@ public class GenreDTO {
     public GenreDTO() {
     }
 
-    String path = "../resources/Genre.csv";
+    String path = "/csv/Genre.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

@@ -19,7 +19,7 @@ public class CustomerDTO {
     public CustomerDTO() {
     }
 
-    String path = "../resources/Customer.csv";
+    String path = "/csv/Customer.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

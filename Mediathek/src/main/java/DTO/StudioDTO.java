@@ -19,7 +19,7 @@ public class StudioDTO {
     @PersistenceContext
     EntityManager em;
 
-    String path = "../resources/Studio.csv";
+    String path = "/csv/Studio.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

@@ -18,7 +18,7 @@ public class LocationDTO {
     public LocationDTO() {
     }
 
-    String path = "../resources/Location.csv";
+    String path = "/csv/Location.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

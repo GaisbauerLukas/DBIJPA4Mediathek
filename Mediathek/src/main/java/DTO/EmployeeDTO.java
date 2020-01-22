@@ -20,7 +20,7 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-    String path = "../resources/Employee.csv";
+    String path = "/csv/Employee.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

@@ -17,7 +17,7 @@ public class BillDTO {
     public BillDTO() {
     }
 
-    String path = "../resources/csv/Bill.csv";
+    String path = "/csv/Bill.CSV";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

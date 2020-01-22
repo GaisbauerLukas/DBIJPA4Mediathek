@@ -20,7 +20,7 @@ public class StoreDTO {
     public StoreDTO() {
     }
 
-    String path = "../resources/Store.csv";
+    String path = "/csv/Store.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))

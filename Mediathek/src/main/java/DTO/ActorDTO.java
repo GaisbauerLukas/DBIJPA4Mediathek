@@ -21,7 +21,7 @@ public class ActorDTO {
     @PersistenceContext
     EntityManager em;
 
-    String path = "../resources/csv/Actor.csv";
+    String path = "/csv/Actor.csv";
 
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()

@@ -24,7 +24,7 @@ public class LendDTO {
     public LendDTO() {
     }
 
-    String path = "../resources/Lend.csv";
+    String path = "/csv/Lend.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))
