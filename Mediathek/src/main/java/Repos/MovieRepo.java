@@ -4,12 +4,13 @@ import Entity.*;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Transactional
 public class MovieRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateMovie(Movie movie) {

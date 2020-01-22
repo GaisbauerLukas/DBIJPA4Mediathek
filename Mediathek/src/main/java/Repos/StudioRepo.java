@@ -4,11 +4,12 @@ import Entity.Studio;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 @Transactional
 public class StudioRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateStudio(Studio studio) {

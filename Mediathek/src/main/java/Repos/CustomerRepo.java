@@ -4,11 +4,12 @@ import Entity.Customer;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 @Transactional
 public class CustomerRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateCustomer(Customer customer) {
