@@ -1,24 +1,23 @@
 package Entity;
 
-import DTO.CustomerDTO;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class Customer {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int customerId;
 
-    @OneToOne
+    String name;
+
+    @OneToOne(cascade = {CascadeType.ALL})
     CustomerDetail customerDetail;
 
-    int credit;
+    double credit;
 
     public Customer(){}
-    public Customer(int customerId, int credit, CustomerDetail customerDetail) {
-        customerId = customerId;
+    public Customer(String name, double credit, CustomerDetail customerDetail) {
+        this.name = name;
         this.credit = credit;
         this.customerDetail = customerDetail;
     }
@@ -39,11 +38,19 @@ public class Customer {
         this.customerDetail = customerDetail;
     }
 
-    public int getCredit() {
+    public double getCredit() {
         return credit;
     }
 
-    public void setCredit(int credit) {
+    public void setCredit(double credit) {
         this.credit = credit;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

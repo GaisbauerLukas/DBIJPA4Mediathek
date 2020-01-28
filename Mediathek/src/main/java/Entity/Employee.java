@@ -9,13 +9,10 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int empId;
     String name;
-    @OneToMany
-    List<Store> stores;
 
     public Employee(){}
-    public Employee(String name, List<Store> store) {
+    public Employee(String name) {
         this.name = name;
-        this.stores = store;
     }
 
 
@@ -33,14 +30,6 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Store> getStores() {
-        return stores;
-    }
-
-    public void setStores(List<Store> store) {
-        this.stores = store;
     }
 
 }
