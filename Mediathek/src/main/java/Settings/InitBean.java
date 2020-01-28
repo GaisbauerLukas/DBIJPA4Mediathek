@@ -4,15 +4,10 @@ import DTO.*;
 import Entity.*;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
 import javax.enterprise.context.Initialized;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.time.LocalDate;
@@ -26,27 +21,27 @@ public class InitBean {
     EntityManager entityManager;
 
     @Inject
-    BillDTO billDTO;
+    BillDAO billDAO;
     @Inject
-    LocationDTO locationDTO;
+    LocationDAO locationDAO;
     @Inject
-    ActorDTO actorDTO;
+    ActorDAO actorDAO;
     @Inject
-    CustomerDTO customerDTO;
+    CustomerDAO customerDAO;
     @Inject
-    StoreDTO storeDTO;
+    StoreDAO storeDAO;
     @Inject
-    EmployeeDTO employeeDTO;
+    EmployeeDAO employeeDAO;
     @Inject
-    GenreDTO genreDTO;
+    GenreDAO genreDAO;
     @Inject
-    LendDTO lendDTO;
+    LendDAO lendDAO;
     @Inject
-    MovieDTO movieDTO;
+    MovieDAO movieDAO;
     @Inject
-    StudioDTO studioDTO;
+    StudioDAO studioDAO;
     @Inject
-    CustomerDetailDTO customerDetailDTO;
+    CustomerDetailDAO customerDetailDAO;
 
     @Transactional
     private void init(@Observes @Initialized(ApplicationScoped.class) Object init){

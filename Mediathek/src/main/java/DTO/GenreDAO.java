@@ -1,45 +1,40 @@
 package DTO;
 
-import Entity.Bill;
 import Entity.Employee;
-import Entity.Movie;
-import Entity.Studio;
+import Entity.Genre;
+import Entity.MovieGenre;
 
 import javax.persistence.EntityManager;
-import javax.persistence.OneToMany;
 import javax.persistence.PersistenceContext;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.List;
 
-public class StudioDTO {
+public class GenreDAO {
 
 
     @PersistenceContext
     EntityManager em;
 
-    String path = "/csv/Studio.csv";
+    public GenreDAO() {
+    }
+
+    String path = "/csv/Genre.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Studio(a[1], getMoviesbyId(a[2].split(","))))
+                .map(a -> new Genre( a[1], getbyId(Integer.parseInt(a[0]))))
                 .forEach(em::merge);
     }
 
-    public StudioDTO() {
+    public List<MovieGenre> getbyId(int id){
+        List<MovieGenre> movieGenres = em.createQuery("select mg from MovieGenre mg where mg.getMovieGenreID.genreId = :id").setParameter("id", id).getResultList();
+        return movieGenres;
     }
 
-    public List<Movie> getMoviesbyId(String[] ids){
-        List<Movie> movies = null;
-        for(int i = 0; i < ids.length; i++){
-            movies.add((Movie)em.createQuery("select m from Movie m where m.movieId = :id").setParameter("id", Integer.parseInt(ids[i])).getSingleResult());
-        }
-
-        return movies;
-    }
 
 }

@@ -8,13 +8,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
-public class BillDTO {
+public class BillDAO {
 
 
     @PersistenceContext
     EntityManager entityManager;
 
-    public BillDTO() {
+    public BillDAO() {
     }
 
     String path = "/csv/Bill.CSV";
