@@ -3,6 +3,7 @@ package Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -12,7 +13,7 @@ public class CustomerDetail {
 
     String phoneNumber;
     String email;
-    Date birthday;
+    LocalDate birthday;
     String favouriteMovie;
     String religion;
 
@@ -20,7 +21,7 @@ public class CustomerDetail {
 
     }
 
-    public CustomerDetail(int customerId, String phoneNumber, String email, Date birthday, String favouriteMovie, String religion) {
+    public CustomerDetail(int customerId, String phoneNumber, String email, LocalDate birthday, String favouriteMovie, String religion) {
         CustomerId = customerId;
         this.phoneNumber = phoneNumber;
         this.email = email;
@@ -53,11 +54,11 @@ public class CustomerDetail {
         this.email = email;
     }
 
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 

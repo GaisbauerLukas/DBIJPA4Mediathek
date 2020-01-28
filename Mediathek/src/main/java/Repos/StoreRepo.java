@@ -7,12 +7,13 @@ import Entity.Store;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Transactional
 public class StoreRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateStore(Store store) {

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -20,12 +21,12 @@ public class Lend {
     @OneToOne
     Movie movie;
 
-    int costPerDay;
-    Date dateOfAusleihe;
+    Double costPerDay;
+    LocalDate dateOfAusleihe;
 
     public Lend(){}
 
-    public Lend( Customer customer, int costPerDay, Date dateOfAusleihe) {
+    public Lend( Customer customer, Double costPerDay, LocalDate dateOfAusleihe) {
         this.costPerDay = costPerDay;
         this.dateOfAusleihe = dateOfAusleihe;
     }
@@ -46,19 +47,19 @@ public class Lend {
         this.customer = customer;
     }
 
-    public int getCostPerDay() {
+    public Double getCostPerDay() {
         return costPerDay;
     }
 
-    public void setCostPerDay(int costPerDay) {
+    public void setCostPerDay(Double costPerDay) {
         this.costPerDay = costPerDay;
     }
 
-    public Date getDateOfAusleihe() {
+    public LocalDate getDateOfAusleihe() {
         return dateOfAusleihe;
     }
 
-    public void setDateOfAusleihe(Date dateOfAusleihe) {
+    public void setDateOfAusleihe(LocalDate dateOfAusleihe) {
         this.dateOfAusleihe = dateOfAusleihe;
     }
 

@@ -4,11 +4,12 @@ import Entity.Actor;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 @Transactional
 public class ActorRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateActor(Actor actor) {

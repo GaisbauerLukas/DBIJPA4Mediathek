@@ -12,9 +12,7 @@ import java.nio.charset.Charset;
 import java.util.*;
 
 public class EmployeeDTO {
-    int empId;
-    String name;
-    List<Store> stores;
+
 
     @PersistenceContext
     EntityManager em;
@@ -22,43 +20,25 @@ public class EmployeeDTO {
     public EmployeeDTO() {
     }
 
-    String path = "../resources/Employee.csv";
+    String path = "/csv/Employee.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Employee( a[1], getbyId(Integer.parseInt(a[0]))))
+                .map(a -> new Employee( a[1], getbyId(a[2].split(","))))
                 .forEach(em::merge);
     }
 
-    public List<Store> getbyId(int id){
-        //List<Store> stores = em.createQuery("select s from Store s where s.employees.get(:id) = :id").setParameter("id", id).getResultList();
+    public List<Store> getbyId(String[] ids){
+        List<Store> stores = null;
+        for(int i = 0; i < ids.length; i++){
+            stores.add((Store)em.createQuery("select s from Store s where s.storeId = :id").setParameter("id", Integer.parseInt(ids[i])).getSingleResult());
+        }
+
         return stores;
     }
 
-    public int getEmpId() {
-        return empId;
-    }
 
-    public void setEmpId(int empId) {
-        this.empId = empId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Store> getStores() {
-        return stores;
-    }
-
-    public void setStores(List<Store> stores) {
-        this.stores = stores;
-    }
 }

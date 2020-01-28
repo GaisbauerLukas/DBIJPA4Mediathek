@@ -12,7 +12,7 @@ import java.util.List;
 
 @Transactional
 public class BillRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateBill(Bill bill) {

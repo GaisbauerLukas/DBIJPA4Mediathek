@@ -4,11 +4,12 @@ import Entity.Location;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 @Transactional
 public class LocationRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateLocation(Location location) {

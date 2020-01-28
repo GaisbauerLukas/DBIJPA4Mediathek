@@ -11,9 +11,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 
 public class CustomerDTO {
-    int CustomerId;
-    CustomerDetail customerDetail;
-    int credit;
+
 
     @PersistenceContext
     EntityManager em;
@@ -21,7 +19,7 @@ public class CustomerDTO {
     public CustomerDTO() {
     }
 
-    String path = "../resources/Customer.csv";
+    String path = "/csv/Customer.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))
@@ -37,27 +35,5 @@ public class CustomerDTO {
         return cd;
     }
 
-    public int getCustomerId() {
-        return CustomerId;
-    }
 
-    public void setCustomerId(int customerId) {
-        CustomerId = customerId;
-    }
-
-    public CustomerDetail getCustomerDetail() {
-        return customerDetail;
-    }
-
-    public void setCustomerDetail(CustomerDetail customerDetail) {
-        this.customerDetail = customerDetail;
-    }
-
-    public int getCredit() {
-        return credit;
-    }
-
-    public void setCredit(int credit) {
-        this.credit = credit;
-    }
 }

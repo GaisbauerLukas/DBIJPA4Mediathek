@@ -4,6 +4,7 @@ import Entity.Lend;
 
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @Transactional
 public class LendRepo {
-    @Inject
+    @PersistenceContext
     EntityManager em;
 
     public void updateLend(Lend lend) {
