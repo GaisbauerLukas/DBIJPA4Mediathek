@@ -32,7 +32,7 @@ public class CustomerDetailDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new CustomerDetail(Integer.parseInt(a[0]), a[1], a[2],LocalDate.parse(a[3],dateTimeFormatter), a[4], a[5]))
+                //.map(a -> new CustomerDetail(a[0], a[1], a[2],LocalDate.parse(a[3],dateTimeFormatter), a[4], a[5]))
                 .forEach(em::merge);
     }
 

@@ -27,7 +27,7 @@ public class EmployeeDTO {
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Employee( a[1], getbyId(a[2].split(","))))
+                .map(a -> new Employee(a[1]))
                 .forEach(em::merge);
     }
 

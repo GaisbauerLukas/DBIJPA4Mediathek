@@ -1,9 +1,7 @@
 package Settings;
 
 import DTO.*;
-import Entity.Bill;
-import Entity.Employee;
-import Entity.Location;
+import Entity.*;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.annotation.PostConstruct;
@@ -13,13 +11,19 @@ import javax.enterprise.context.Initialized;
 import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 
 @ApplicationScoped
 public class InitBean {
+
+    @PersistenceContext
+    EntityManager entityManager;
 
     @Inject
     BillDTO billDTO;
@@ -66,9 +70,14 @@ public class InitBean {
         //movieDTO.readFromCSV();
         */
 
+        insertTestdata();
+
     }
 
     public void insertTestdata(){
+
+        // Region Store
+
         //Bill
         List<Bill> bills = new LinkedList<Bill>();
         bills.add(new Bill("Scary Movie", 11.50));
@@ -83,8 +92,25 @@ public class InitBean {
         //Location
         Location locations = new Location("Österreich", "Wels");
 
+        bills.forEach(entityManager::persist);
+        employees.forEach(entityManager::persist);
+        entityManager.persist(locations);
+        //EndRegion Store
+
+        //Region Lend
+        CustomerDetail customerDetail = new CustomerDetail("069919249980", "eineEmail@gmx.at", LocalDate.now(), "Ein Filmche", "Röm. Katolisch");
+        CustomerDetail customerDetail2 = new CustomerDetail("069919249981", "zweiEmail@gmx.at", LocalDate.now(), "Avenger", "Islam");
+        Customer customer = new Customer("Fabian Fischler", -300, customerDetail);
+        Customer customer2 = new Customer("Philip NixTestdata", 1000000, customerDetail2);
+
+        entityManager.persist(customer);
+        entityManager.persist(customer2);
 
 
+        //EndRegion Lend
+
+        //Region Movie
+        //EndRegion Movie
     }
 
 }

@@ -2,6 +2,8 @@ package Entity;
 
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.Date;
@@ -9,6 +11,7 @@ import java.util.Date;
 @Entity
 public class CustomerDetail {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int CustomerId;
 
     String phoneNumber;
@@ -21,8 +24,7 @@ public class CustomerDetail {
 
     }
 
-    public CustomerDetail(int customerId, String phoneNumber, String email, LocalDate birthday, String favouriteMovie, String religion) {
-        CustomerId = customerId;
+    public CustomerDetail(String phoneNumber, String email, LocalDate birthday, String favouriteMovie, String religion) {
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.birthday = birthday;
