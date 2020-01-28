@@ -1,7 +1,6 @@
 package Entity;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 public class Bill {
@@ -9,12 +8,12 @@ public class Bill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int billId;
     String movie;
-    int cost;
+    double cost;
 
     public Bill(){
     }
 
-    public Bill( String movie, int cost) {
+    public Bill( String movie, double cost) {
         this.movie = movie;
         this.cost = cost;
     }
@@ -35,11 +34,11 @@ public class Bill {
         this.movie = movie;
     }
 
-    public int getCost() {
+    public double getCost() {
         return cost;
     }
 
-    public void setCost(int cost) {
+    public void setCost(double cost) {
         this.cost = cost;
     }
 }

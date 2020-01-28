@@ -9,15 +9,15 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int storeId;
     String street;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<Employee> employees;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<Bill> bills;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     Location location;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<Lend> lends;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<Movie> movies;
 
     public Store(){}

@@ -1,6 +1,9 @@
 package Settings;
 
 import DTO.*;
+import Entity.Bill;
+import Entity.Employee;
+import Entity.Location;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.annotation.PostConstruct;
@@ -12,6 +15,8 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.LinkedList;
+import java.util.List;
 
 @ApplicationScoped
 public class InitBean {
@@ -60,6 +65,26 @@ public class InitBean {
         studioDTO.readFromCSV();
         //movieDTO.readFromCSV();
         */
+
+    }
+
+    public void insertTestdata(){
+        //Bill
+        List<Bill> bills = new LinkedList<Bill>();
+        bills.add(new Bill("Scary Movie", 11.50));
+        bills.add(new Bill("Avanger", 22.10));
+        bills.add(new Bill("American Sniper", 55));
+
+        //employees
+        List<Employee> employees = new LinkedList<>();
+        employees.add(new Employee("Herbert Miller"));
+        employees.add(new Employee("Anette Frank"));
+
+        //Location
+        Location locations = new Location("Österreich", "Wels");
+
+
+
     }
 
 }

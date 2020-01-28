@@ -10,17 +10,17 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int movieId;
     String name;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<ActorMovie> actorMovies;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<MovieLocation>movieLocations;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<MovieGenre>movieGenres;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     Studio studio;
-    @OneToOne
+    @OneToOne(cascade = {CascadeType.ALL})
     Lend lend;
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     Store store;
 
     public Movie(){}
