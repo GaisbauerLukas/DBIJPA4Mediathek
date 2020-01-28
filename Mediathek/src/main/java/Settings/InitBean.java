@@ -41,17 +41,25 @@ public class InitBean {
 
     @Transactional
     private void init(@Observes @Initialized(ApplicationScoped.class) Object init){
-        billDTO.readFromCSV();
-        locationDTO.readFromCSV();
+        //Store
+        //billDTO.readFromCSV();
+        //locationDTO.readFromCSV();
+        //employeeDTO.readFromCSV();
+        //storeDTO.readFromCSV();
+
+        /*  debugZone
+        //Lend
         customerDetailDTO.readFromCSV();
         customerDTO.readFromCSV();
+        //lendDTO.readFromCSV();
+
+
+        //Movie
         actorDTO.readFromCSV();
-        employeeDTO.readFromCSV();
-        storeDTO.readFromCSV();
         genreDTO.readFromCSV();
-        lendDTO.readFromCSV();
-        movieDTO.readFromCSV();
         studioDTO.readFromCSV();
+        //movieDTO.readFromCSV();
+        */
     }
 
 }
