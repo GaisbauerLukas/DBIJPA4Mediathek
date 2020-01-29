@@ -93,10 +93,10 @@ public class InitBean {
         //EndRegion Store
 
         //Region Lend
-        CustomerDetail customerDetail = new CustomerDetail("069919249980", "eineEmail@gmx.at", LocalDate.now(), "Ein Filmche", "Röm. Katolisch");
-        CustomerDetail customerDetail2 = new CustomerDetail("069919249981", "zweiEmail@gmx.at", LocalDate.now(), "Avenger", "Islam");
-        Customer customer = new Customer("Fabian Fischler", -300, customerDetail);
-        Customer customer2 = new Customer("Philip NixTestdata", 1000000, customerDetail2);
+        CustomerDetail customerDetail = new CustomerDetail("069919249980", "eineEmail@gmx.at", LocalDate.now(), "Avenger", "Röm. Katolisch");
+        CustomerDetail customerDetail2 = new CustomerDetail("069919249981", "zweiEmail@gmx.at", LocalDate.now(), "Ein Filmchen", "Islam");
+        Customer customer = new Customer("Fabian Fischler", -300, customerDetail, bills);
+        Customer customer2 = new Customer("Philip NixTestdata", 1000000, customerDetail2, null);
 
         entityManager.persist(customer);
         entityManager.persist(customer2);
