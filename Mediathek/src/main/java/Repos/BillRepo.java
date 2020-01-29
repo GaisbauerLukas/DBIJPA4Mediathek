@@ -32,7 +32,15 @@ public class BillRepo {
     public void createBillOfLend(Lend lend){
         //implement delete rend get cost out of rend(via Rend Repo and create new bill
     }
-    public List<Bill> getBillByCustomer(Customer customer){
-        return null;
+    public List<Bill> getBillByCustomer(int customerId){
+        return em.createQuery("Select cus.bills From Customer cus").getResultList();
+    }
+
+    public Bill getBillById(int id){
+        return (Bill)em.createQuery("Select bi from Bill bi where bi.billId = :Id").setParameter("Id",id).getSingleResult();
+    }
+
+    public List<Bill> getBills() {
+        return em.createQuery("Select bi from Bill bi",Bill.class).getResultList();
     }
 }

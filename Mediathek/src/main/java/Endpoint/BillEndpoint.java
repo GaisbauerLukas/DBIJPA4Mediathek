@@ -7,8 +7,10 @@ import Repos.BillRepo;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.util.List;
 
-@Path("api/Bill")
+@Path("Bill")
 public class BillEndpoint {
 
     @Inject
@@ -38,9 +40,24 @@ public class BillEndpoint {
         billRepo.deleteBill(id);
     }
 
-    @Path("getBillOfCustomer")
+    @Path("{id}")
     @GET
-    public void getBillOfCustomer(Customer customer){
-        billRepo.getBillByCustomer(customer);
+    @Produces(MediaType.APPLICATION_JSON)
+    public Bill getById(@PathParam("id") int id){
+        return billRepo.getBillById(id);
+    }
+
+    @Path("list")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Bill> getBills(){
+        return billRepo.getBills();
+    }
+
+    @Path("getBillOfCustomer/{cid}")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public void getBillOfCustomer(@PathParam("cid") int id){
+        billRepo.getBillByCustomer(id);
     }
 }

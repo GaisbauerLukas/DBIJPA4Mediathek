@@ -7,7 +7,7 @@ import Repos.GenreRepo;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-@Path("api/Genre")
+@Path("Genre")
 public class GenreEndpoint {
 
     @Inject
