@@ -1,38 +1,43 @@
 package DTO;
 
-import Entity.Actor;
 import Entity.Customer;
-import Entity.CustomerDetail;
+import Entity.Employee;
+import Entity.Store;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.util.*;
 
-public class CustomerDTO {
+public class EmployeeDAO {
 
 
     @PersistenceContext
     EntityManager em;
 
-    public CustomerDTO() {
+    public EmployeeDAO() {
     }
 
-    String path = "/csv/Customer.csv";
+    String path = "/csv/Employee.csv";
     public void readFromCSV(){
         new BufferedReader(new InputStreamReader(this.getClass()
                 .getResourceAsStream(path), Charset.defaultCharset()))
                 .lines()
                 .skip(1)
                 .map(s -> s.split(";"))
-                .map(a -> new Customer(Integer.parseInt(a[1]),Integer.parseInt(a[1]), getbyId(Integer.parseInt(a[0]))))
+                .map(a -> new Employee(a[1]))
                 .forEach(em::merge);
     }
 
-    public CustomerDetail getbyId(int id){
-        CustomerDetail cd = (CustomerDetail)em.createQuery("select cd from CustomerDetail cd where cd.CustomerId = :id").setParameter("id", id).getSingleResult();
-        return cd;
+    public List<Store> getbyId(String[] ids){
+        List<Store> stores = null;
+        for(int i = 0; i < ids.length; i++){
+            stores.add((Store)em.createQuery("select s from Store s where s.storeId = :id").setParameter("id", Integer.parseInt(ids[i])).getSingleResult());
+        }
+
+        return stores;
     }
 
 

@@ -11,13 +11,13 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.List;
 
-public class MovieDTO {
+public class MovieDAO {
 
 
     @PersistenceContext
     EntityManager em;
 
-    public MovieDTO() {
+    public MovieDAO() {
 
     }
 

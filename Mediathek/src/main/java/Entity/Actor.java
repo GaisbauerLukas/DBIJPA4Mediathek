@@ -9,7 +9,7 @@ public class Actor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int actorId;
     String name;
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.ALL})
     List<ActorMovie> actorMovies;
 
     public Actor(){

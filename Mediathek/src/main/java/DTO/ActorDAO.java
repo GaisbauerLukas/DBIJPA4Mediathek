@@ -12,10 +12,10 @@ import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.util.List;
 
-public class ActorDTO {
+public class ActorDAO {
 
 
-    public ActorDTO() {
+    public ActorDAO() {
     }
 
     @PersistenceContext
