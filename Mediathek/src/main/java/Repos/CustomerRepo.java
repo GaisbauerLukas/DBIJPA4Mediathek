@@ -6,6 +6,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Transactional
 public class CustomerRepo {
@@ -24,5 +25,13 @@ public class CustomerRepo {
     }
     public void createCustomer(Customer customer){
         em.persist(customer);
+    }
+
+    public Customer getCustomerById(int id){
+        return (Customer)em.createQuery("select cus from Customer cus where cus.customerId= :Id",Customer.class).setParameter("Id",id).getSingleResult();
+    }
+
+    public List<Customer> getCustomer(){
+        return em.createQuery("select cus from Customer cus",Customer.class).getResultList();
     }
 }
