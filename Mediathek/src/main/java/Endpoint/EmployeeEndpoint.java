@@ -6,7 +6,7 @@ import Repos.EmplyoeeRepo;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
-@Path("api/Employee")
+@Path("Employee")
 public class EmployeeEndpoint {
 
     @Inject

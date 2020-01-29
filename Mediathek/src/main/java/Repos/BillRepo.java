@@ -35,4 +35,8 @@ public class BillRepo {
     public List<Bill> getBillByCustomer(Customer customer){
         return null;
     }
+
+    public Bill getBillById(int id){
+        return (Bill)em.createQuery("Select bi from Bill bi where bi.billId = :Id").setParameter("Id",id).getSingleResult();
+    }
 }

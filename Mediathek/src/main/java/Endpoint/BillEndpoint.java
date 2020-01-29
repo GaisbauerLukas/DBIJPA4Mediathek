@@ -8,7 +8,7 @@ import Repos.BillRepo;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-@Path("api/Bill")
+@Path("Bill")
 public class BillEndpoint {
 
     @Inject
@@ -36,6 +36,12 @@ public class BillEndpoint {
     @DELETE
     public void delete(@PathParam("id") int id){
         billRepo.deleteBill(id);
+    }
+
+    @Path("getById-{id}")
+    @GET
+    public Bill getById(@PathParam("id") int id){
+        return billRepo.getBillById(id);
     }
 
     @Path("getBillOfCustomer")

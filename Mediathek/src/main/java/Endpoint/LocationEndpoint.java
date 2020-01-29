@@ -8,7 +8,7 @@ import Repos.LocationRepo;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 
-@Path("api/Location")
+@Path("Location")
 public class LocationEndpoint {
 
     @Inject

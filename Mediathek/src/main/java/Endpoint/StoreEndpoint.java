@@ -7,7 +7,7 @@ import Repos.StoreRepo;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
-@Path("api/Store")
+@Path("Store")
 public class StoreEndpoint {
 
     @Inject
