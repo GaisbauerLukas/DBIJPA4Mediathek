@@ -7,6 +7,7 @@ import Repos.BillRepo;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 
 @Path("Bill")
 public class BillEndpoint {
@@ -38,8 +39,9 @@ public class BillEndpoint {
         billRepo.deleteBill(id);
     }
 
-    @Path("getById-{id}")
+    @Path("{id}")
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     public Bill getById(@PathParam("id") int id){
         return billRepo.getBillById(id);
     }
