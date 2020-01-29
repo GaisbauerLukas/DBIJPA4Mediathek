@@ -1,6 +1,7 @@
 package Entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Customer {
@@ -13,13 +14,17 @@ public class Customer {
     @OneToOne(cascade = {CascadeType.ALL})
     CustomerDetail customerDetail;
 
+    @OneToMany
+    List<Bill> bills;
+
     double credit;
 
     public Customer(){}
-    public Customer(String name, double credit, CustomerDetail customerDetail) {
+    public Customer(String name, double credit, CustomerDetail customerDetail, List<Bill> bills) {
         this.name = name;
         this.credit = credit;
         this.customerDetail = customerDetail;
+        this.bills = bills;
     }
 
     public int getCustomerId() {
@@ -52,5 +57,13 @@ public class Customer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bill> bills) {
+        this.bills = bills;
     }
 }
