@@ -34,7 +34,7 @@ public class BillEndpoint {
         billRepo.updateBill(bill);
     }
 
-    @Path("delete-{id}")
+    @Path("delete/{id}")
     @DELETE
     public void delete(@PathParam("id") int id){
         billRepo.deleteBill(id);
